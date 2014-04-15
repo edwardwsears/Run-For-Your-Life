@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="run_for_your_life.screens"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="run_for_your_life.screens.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="run_for_your_life.screens.LoadActivity"
+            android:label="@string/title_activity_load" >
+        </activity>
+        <activity
+            android:name="run_for_your_life.screens.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="run_for_your_life.screens.MainMenuActivity"
+            android:label="@string/title_activity_main_menu" >
+        </activity>
+        <activity
+            android:name="run_for_your_life.screens.Tutorial1Activity"
+            android:label="@string/title_activity_tutorial1"
+            android:parentActivityName="run_for_your_life.screens.MainMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainMenuActivity" />
+        </activity>
+        <activity
+            android:name="run_for_your_life.screens.Tutorial2Activity"
+            android:label="@string/title_activity_tutorial2"
+            android:parentActivityName="run_for_your_life.screens.Tutoria1Activity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="Tutoria1Activity" />
+        </activity>
+        <activity
+            android:name="run_for_your_life.screens.Tutorial3Activity"
+            android:label="@string/title_activity_tutorial3"
+            android:parentActivityName="run_for_your_life.screens.Tutorial2Activity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="Tutorial2Activity" />
+        </activity>
+        <activity
+            android:name="run_for_your_life.screens.Tutorial4Activity"
+            android:label="@string/title_activity_tutorial4"
+            android:parentActivityName="run_for_your_life.screens.Tutorial3Activity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="Tutorial3Activity" />
+        </activity>
+        <activity
+            android:name="run_for_your_life.screens.DojoActivity"
+            android:label="@string/title_activity_dojo"
+            android:parentActivityName="run_for_your_life.screens.MainMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainMenuActivity" />
+        </activity>
+    </application>
+
+</manifest>

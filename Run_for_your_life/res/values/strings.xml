@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Run for your life</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- loading screen -->
+    <string name="app_name_cap">RUN FOR YOUR LIFE</string>
+    <string name="loading">loading</string>
+    <string name="title_activity_load">LoadActivity</string>
+
+    <!-- login screen -->
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="new_user">New User</string>
+
+    <!-- Main Menu -->
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="dojo">Dojo</string>
+    <string name="arena">Arena</string>
+    <string name="friends">Friends</string>
+    <string name="view_stats">View Stats</string>
+    <string name="title_activity_tutorial1">Tutorial1Activity</string>
+
+    <!-- tutorial text -->
+    <string name="tut_dojo">Click here to enter your training dojo! Complete workouts while logging your heart rate to recharge and power up!</string>
+    <string name="tap">Tap to continue</string>
+    <string name="title_activity_tutorial2">Tutorial2Activity</string>
+    <string name="tut_arena1">When you think you\'re ready</string>
+    <string name="tut_arena2">Click here to enter the fighting arena to put your fitness to the test against live opponents!</string>
+    <string name="title_activity_tutorial3">Tutorial3Activity</string>
+    <string name="tut_friends1">What\'s an epic journey without bragging to your friends? Find friends you know or simply like minded enthusiasts</string>
+    <string name="tut_friends2">to help motivate your progress!</string>
+    <string name="title_activity_tutorial4">Tutorial4Activity</string>
+    <string name="tut_stats">Check out your stats and progress to date, Additionally, you can see your fighter\'s level and other cool things!</string>
+    
+    <!-- Dojo text -->
+    <string name="title_activity_dojo">DojoActivity</string>
+    <string name="log_pulse">Log Pulse</string>
+    <string name="pulse_instr">Place finger over camera lens and tap "Log Pulse"</string>
+    <string name="pulse_text">Time-BPM\nTime-BPM</string>
+    
+    
+</resources>
