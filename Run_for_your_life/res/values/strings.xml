@@ -18,6 +18,7 @@
     <string name="new_user">New User</string>
 
     <!-- Main Menu -->
+    <string name="logout">Logout</string>
     <string name="title_activity_main_menu">MainMenuActivity</string>
     <string name="dojo">Dojo</string>
     <string name="arena">Arena</string>
@@ -36,12 +37,19 @@
     <string name="tut_friends2">to help motivate your progress!</string>
     <string name="title_activity_tutorial4">Tutorial4Activity</string>
     <string name="tut_stats">Check out your stats and progress to date, Additionally, you can see your fighter\'s level and other cool things!</string>
-    
+
     <!-- Dojo text -->
     <string name="title_activity_dojo">DojoActivity</string>
     <string name="log_pulse">Log Pulse</string>
     <string name="pulse_instr">Place finger over camera lens and tap "Log Pulse"</string>
     <string name="pulse_text">Time-BPM\nTime-BPM</string>
-    
-    
+    <string name="title_activity_arena">ArenaActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_friends">FriendsActivity</string>
+
+    <!-- Friends text -->
+    <string name="search">Search for friends...</string>
+    <string name="title_activity_stats">StatsActivity</string>
+
 </resources>

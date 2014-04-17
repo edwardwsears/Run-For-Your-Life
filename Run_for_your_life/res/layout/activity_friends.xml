@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="run_for_your_life.screens.FriendsActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="right"
+        android:hint="@string/search" >
+
+        <requestFocus />
+    </AutoCompleteTextView>
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/autoCompleteTextView1"
+        android:layout_margin="10dp" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF0000" >
+
+            <TextView
+                android:id="@+id/R1C1"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Friend1" />
+
+            <TextView
+                android:id="@+id/R1C2"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Info" />
+
+            <TextView
+                android:id="@+id/R1C3"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Fight!" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FF00" >
+
+            <TextView
+                android:id="@+id/R2C1"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Friend2" />
+
+            <TextView
+                android:id="@+id/R2C2"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Info" />
+
+            <TextView
+                android:id="@+id/R2C3"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Fight!" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0000FF" >
+
+            <TextView
+                android:id="@+id/R3C1"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Friend3" />
+
+            <TextView
+                android:id="@+id/R3C2"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Info" />
+
+            <TextView
+                android:id="@+id/R3C3"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Fight!" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#267825" >
+
+            <TextView
+                android:id="@+id/R4C1"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Friend4" />
+
+            <TextView
+                android:id="@+id/R4C2"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Info" />
+
+            <TextView
+                android:id="@+id/R4C3"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Fight!" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

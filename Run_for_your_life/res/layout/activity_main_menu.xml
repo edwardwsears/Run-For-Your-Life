@@ -3,22 +3,14 @@
     android:layout_height="fill_parent" >
 
     <Button
-        android:id="@+id/button_dojo"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="@string/dojo" />
-
-    <Button
         android:id="@+id/button_arena"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_dojo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="@string/arena" />
+        android:text="@string/arena"
+        android:onClick="goToArena" />
 
     <Button
         android:id="@+id/button_friends"
@@ -27,7 +19,8 @@
         android:layout_below="@+id/button_arena"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="@string/friends" />
+        android:text="@string/friends"
+        android:onClick="goToFriends" />
 
     <Button
         android:id="@+id/button_stats"
@@ -36,6 +29,34 @@
         android:layout_below="@+id/button_friends"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="@string/view_stats" />
+        android:text="@string/view_stats"
+        android:onClick="goToStats" />
+
+    <TextView
+        android:id="@+id/display_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <Button
+        android:id="@+id/button_logout"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/logout"
+        android:onClick="logout" />
+
+    <Button
+        android:id="@+id/button_dojo"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_arena"
+        android:layout_below="@+id/button_logout"
+        android:layout_marginTop="30dp"
+        android:onClick="goToDojo"
+        android:text="@string/dojo" />
 
 </RelativeLayout>

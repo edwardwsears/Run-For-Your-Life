@@ -9,12 +9,11 @@ public class Tutorial1Activity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tutorial1);
+		getActionBar().hide();
 	}
 	
 	@Override
 	protected void onDestroy(){
 		super.onDestroy();
-	}
-
-	
+	}	
 }

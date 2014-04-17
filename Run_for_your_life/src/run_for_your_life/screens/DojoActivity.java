@@ -9,6 +9,7 @@ public class DojoActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dojo);
+//		getActionBar().hide();
 	}
 	
 	@Override
@@ -16,5 +17,4 @@ public class DojoActivity extends Activity {
 		super.onDestroy();
 	}
 
-	
 }
