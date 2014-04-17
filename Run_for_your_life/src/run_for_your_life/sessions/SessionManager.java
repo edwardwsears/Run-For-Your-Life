@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import run_for_your_life.screens.*;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -56,11 +57,9 @@ public class SessionManager {
 			// user is not logged in redirect him to Login Activity
 			Intent i = new Intent(_context, LoginActivity.class);
 			// Closing all the Activities
-			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-			// Add new Flag to start new Activity
-			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
+			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK  | Intent.FLAG_ACTIVITY_NEW_TASK | 
+					   Intent.FLAG_ACTIVITY_NO_HISTORY );
+			
 			// Starting Login Activity
 			_context.startActivity(i);
 		}
@@ -94,10 +93,8 @@ public class SessionManager {
 		// After logout redirect user to Login Activity
 		Intent i = new Intent(_context, LoginActivity.class);
 		// Closing all the Activities
-		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-		// Add new Flag to start new Activity
-		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK |
+				   Intent.FLAG_ACTIVITY_NO_HISTORY );
 
 		// Staring Login Activity
 		_context.startActivity(i);

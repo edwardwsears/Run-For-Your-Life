@@ -45,6 +45,7 @@ public class LoginActivity extends Activity {
                  
                 // Staring MainActivity
                 Intent i = new Intent(getApplicationContext(), MainMenuActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
                 finish();     
             } else{

@@ -4,4 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="run_for_your_life.screens.StatsActivity"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Some nice stats!" />
+
+</FrameLayout>
