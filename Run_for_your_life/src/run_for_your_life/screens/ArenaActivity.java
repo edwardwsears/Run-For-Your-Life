@@ -1,12 +1,9 @@
 package run_for_your_life.screens;
 
 import run_for_your_life.screens.util.SystemUiHider;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,7 +19,6 @@ import android.support.v4.app.NavUtils;
  * @see SystemUiHider
  */
 public class ArenaActivity extends Activity {
-	private BroadcastReceiver br;
 	/**
 	 * Whether or not the system UI should be auto-hidden after
 	 * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -63,47 +59,48 @@ public class ArenaActivity extends Activity {
 
 		// Set up an instance of SystemUiHider to control the system UI for
 		// this activity.
-		mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
+		mSystemUiHider = SystemUiHider.getInstance(this, contentView,
+				HIDER_FLAGS);
 		mSystemUiHider.setup();
 		mSystemUiHider
-		.setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
-			// Cached values.
-			int mControlsHeight;
-			int mShortAnimTime;
+				.setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
+					// Cached values.
+					int mControlsHeight;
+					int mShortAnimTime;
 
-			@Override
-			@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-			public void onVisibilityChange(boolean visible) {
-				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-					// If the ViewPropertyAnimator API is available
-					// (Honeycomb MR2 and later), use it to animate the
-					// in-layout UI controls at the bottom of the
-					// screen.
-					if (mControlsHeight == 0) {
-						mControlsHeight = controlsView.getHeight();
-					}
-					if (mShortAnimTime == 0) {
-						mShortAnimTime = getResources().getInteger(
-								android.R.integer.config_shortAnimTime);
-					}
-					controlsView
-					.animate()
-					.translationY(visible ? 0 : mControlsHeight)
-					.setDuration(mShortAnimTime);
-				} else {
-					// If the ViewPropertyAnimator APIs aren't
-					// available, simply show or hide the in-layout UI
-					// controls.
-					controlsView.setVisibility(visible ? View.VISIBLE
-							: View.GONE);
-				}
+					@Override
+					@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+					public void onVisibilityChange(boolean visible) {
+						if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+							// If the ViewPropertyAnimator API is available
+							// (Honeycomb MR2 and later), use it to animate the
+							// in-layout UI controls at the bottom of the
+							// screen.
+							if (mControlsHeight == 0) {
+								mControlsHeight = controlsView.getHeight();
+							}
+							if (mShortAnimTime == 0) {
+								mShortAnimTime = getResources().getInteger(
+										android.R.integer.config_shortAnimTime);
+							}
+							controlsView
+									.animate()
+									.translationY(visible ? 0 : mControlsHeight)
+									.setDuration(mShortAnimTime);
+						} else {
+							// If the ViewPropertyAnimator APIs aren't
+							// available, simply show or hide the in-layout UI
+							// controls.
+							controlsView.setVisibility(visible ? View.VISIBLE
+									: View.GONE);
+						}
 
-				if (visible && AUTO_HIDE) {
-					// Schedule a hide().
-					delayedHide(AUTO_HIDE_DELAY_MILLIS);
-				}
-			}
-		});
+						if (visible && AUTO_HIDE) {
+							// Schedule a hide().
+							delayedHide(AUTO_HIDE_DELAY_MILLIS);
+						}
+					}
+				});
 
 		// Set up the user interaction to manually show or hide the system UI.
 		contentView.setOnClickListener(new View.OnClickListener() {
@@ -123,30 +120,6 @@ public class ArenaActivity extends Activity {
 		findViewById(R.id.dummy_button).setOnTouchListener(
 				mDelayHideTouchListener);
 	}
-
-//	@Override
-//	protected void onResume() {
-//		super.onResume();
-//
-//		IntentFilter intentFilter = new IntentFilter();
-//		intentFilter.addAction("run_for_your_life.ACTION_LOGOUT");
-//		br = new BroadcastReceiver() {
-//			@Override
-//			public void onReceive(Context context, Intent intent) {
-//				System.out.println("onReceive - Logout in progress");
-//				//At this point you should start the login activity and finish this one
-//				finish();
-//			}
-//		};
-//		registerReceiver(br, intentFilter);
-//	}
-//
-//	@Override
-//	protected void onPause() {
-//		super.onPause();
-//
-//		unregisterReceiver(br);
-//	}
 
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {

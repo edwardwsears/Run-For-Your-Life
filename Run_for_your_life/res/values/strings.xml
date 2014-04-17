@@ -49,7 +49,7 @@
     <string name="title_activity_friends">FriendsActivity</string>
 
     <!-- Friends text -->
-    <string name="search">Search for friends...</string>
+    <string name="search">Search for friends&#8230;</string>
     <string name="title_activity_stats">StatsActivity</string>
 
 </resources>
