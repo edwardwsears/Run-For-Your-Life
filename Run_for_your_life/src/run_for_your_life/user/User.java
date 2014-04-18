@@ -17,6 +17,7 @@ public class User{
         this.password = password;
     }
 
+<<<<<<< HEAD
     public User(String username, String password, int health, int ammo, int level, String friends){
         this.username = username;
         this.password = password;
@@ -63,6 +64,54 @@ public class User{
         level = l;
     }
     public void setFriends(String f){
+=======
+    public User(String username,String password,int health, int ammo, int level, String friends){
+        this.username = username;
+        this.password = password;
+        this.health = health;
+        this.ammo = ammo;
+        this.level = level;
+        this.friends = friends;
+    }
+
+    //get methods
+    public String getName(){
+        return username;
+    }
+    public String getPw(){
+        return password;
+    }
+    public Int getHealth(){
+        return health;
+    }
+    public Int getAmmo(){
+        return ammo;
+    }
+    public Int getLevel(){
+        return level;
+    }
+    public String getFriends(){
+        return friends;
+    }
+
+    //set methods
+    public setUsername(String name){
+        username = name;
+    }
+    public setPassword(String pw){
+        password = pw;
+    }
+    public setHealth(int h){
+        health = h;
+    }
+    public setAmmo(int a){
+        ammo = a;
+    }
+    public setLevel(int l){
+        level = l;
+    }
+    public setFriends(String f){
+>>>>>>> branch 'master' of https://github.com/edwardwsears/Run-For-Your-Life.git
         friends = f;
     }
 }
