@@ -1,4 +1,4 @@
-package run_for_your_live.user;
+package run_for_your_life.user;
 
 public class User{
 

@@ -1,4 +1,4 @@
-package run_for_your_live.database;
+package run_for_your_life.database;
 
 import java.util.ArrayList;
 import java.util.List;
