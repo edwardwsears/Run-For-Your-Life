@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainMenuActivity extends Activity {
-	private String userName;
+//	private String userName; 
 	private SessionManager session;
 
 	@Override
