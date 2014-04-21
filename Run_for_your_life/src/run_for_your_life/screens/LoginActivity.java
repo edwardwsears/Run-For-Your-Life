@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 	private EditText editText_username, editText_password;
@@ -50,12 +51,14 @@ public class LoginActivity extends Activity {
                 finish();     
             } else{
                 // userName / password doesn't match
-                System.out.println("Login failed... Username/Password is incorrect");
+            	Toast.makeText(getApplicationContext(), "Login failed... Username/Password is incorrect",
+            	Toast.LENGTH_SHORT).show();
             }               
         } else{
             // user didn't enter userName or password
             // Show alert asking him to enter the details
-            System.out.println("Login failed... Please enter username and password");
+        	Toast.makeText(getApplicationContext(), "Login failed... Please enter username and password",
+        	Toast.LENGTH_SHORT).show();
         }
 	}
 	
@@ -64,11 +67,11 @@ public class LoginActivity extends Activity {
 	 * @param view
 	 */
 	public void makeNewUser(View view) {
-		// TODO: Do new user stuff (create username/password, check that username is available)
-		// SUCCESS: Launch the MainMenuActivity as a new user
+		// TODO: Do new user stuff (create username/password, check that username is available, create login session)
+		// SUCCESS: Launch the Tutorial screens
 		// FAILURE: Let them know why and stay put
-		String userName = "";
-		Intent intent = new Intent(this, MainMenuActivity.class);
+		String userName = "newUser";
+		Intent intent = new Intent(this, Tutorial1Activity.class);
 		intent.putExtra("isNoob", true);
 		intent.putExtra("userName", userName);
 		startActivity(intent);
