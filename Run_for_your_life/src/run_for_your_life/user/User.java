@@ -1,5 +1,7 @@
 package run_for_your_life.user;
 
+import java.util.ArrayList;
+
 public class User{
 
     private String username;
@@ -7,7 +9,7 @@ public class User{
     private int health;
     private int ammo;
     private int level;
-    private String friends;
+    private ArrayList<String> friends;
 
     public User(){
     }
@@ -17,7 +19,7 @@ public class User{
         this.password = password;
     }
 
-    public User(String username, String password, int health, int ammo, int level, String friends){
+    public User(String username, String password, int health, int ammo, int level, ArrayList<String> friends){
         this.username = username;
         this.password = password;
         this.health = health;
@@ -42,7 +44,7 @@ public class User{
     public int getLevel(){
         return level;
     }
-    public String getFriends(){
+    public ArrayList<String> getFriends(){
         return friends;
     }
 
@@ -62,7 +64,7 @@ public class User{
     public void setLevel(int l){
         level = l;
     }
-    public void setFriends(String f){
+    public void setFriends(ArrayList<String> f){
         friends = f;
     }
 }
