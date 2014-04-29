@@ -39,7 +39,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues fr = new ContentValues();
         for (String friend : friends){
             fr.put(KEY_USERNAME, username);
-            fr.put(KEY_FRIEND , friend);
+            fr.put(KEY_FRIENDS , friend);
             db.insert(TABLE_FRIENDINFO, null, fr);
         }
     }
@@ -47,7 +47,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     private void delete_from_friends_table(String username){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.rawQuery("delete * from "+TABLE_FRIENDINFO+" where "+KEY_USERNAME+"="+username;
+        db.rawQuery("delete * from "+TABLE_FRIENDINFO+" where "+KEY_USERNAME+"="+username,null);
     }
 
     // Creating Tables
@@ -72,9 +72,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_USER_TABLE);
         //create friend list table
         String CREATE_FRIENDS_TABLE = "CREATE TABLE IF NOT EXISTS " 
-                + TABLE_FRIENDS + " ("
+                + TABLE_FRIENDINFO + " ("
                 + KEY_USERNAME + " TEXT NOT NULL PRIMARY KEY," 
-                + KEY_FRIEND + " TEXT NOT NULL );";
+                + KEY_FRIENDS + " TEXT NOT NULL );";
         db.execSQL(CREATE_FRIENDS_TABLE);
         System.out.println("Created SQLiteDatabase");
         System.out.println(CREATE_USER_TABLE);
@@ -99,7 +99,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public void addUser (User user) {
         SQLiteDatabase db = this.getWritableDatabase();
-        username = user.getName();
+        String username = user.getName();
 
         //add to user table
         ContentValues values = new ContentValues();
@@ -125,12 +125,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String password = c.getString(c.getColumnIndex(KEY_PASSWORD));
         int health = c.getInt(c.getColumnIndex(KEY_HEALTH));
         int ammo = c.getInt(c.getColumnIndex(KEY_AMMO));
-        int level = c.getInt(c.getColumnIndex(KEY_level));
+        int level = c.getInt(c.getColumnIndex(KEY_LEVEL));
         
         ArrayList<String> friends = new ArrayList<String>();
         Cursor cfr = db.rawQuery("select * from "+TABLE_USERINFO+" where "+KEY_USERNAME+"="+username,null);
         while (cfr.moveToNext()){
-            friends.add(cfr.getString(cfr.getColumnIndex(KEY_FRIEND)));
+            friends.add(cfr.getString(cfr.getColumnIndex(KEY_FRIENDS)));
         }
 
         User user = new User(username, password, health, ammo, level, friends);
@@ -184,13 +184,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         
         // updating row
         db.update(TABLE_USERINFO, values, KEY_USERNAME + " = ?", new String[] { String.valueOf(user.getName()) });
-        db.rawQuery("update "+TABLE_USERINFO+" set dd"where "+KEY_USERNAME+"="+username,null);
     }
     
     public void deleteUser (String user) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_USERINFO, KEY_USERNAME + " = ?", new String[] { user });
-        delete_from_friends_table(user.getName());
+        delete_from_friends_table(user);
 
         db.close();
     }
