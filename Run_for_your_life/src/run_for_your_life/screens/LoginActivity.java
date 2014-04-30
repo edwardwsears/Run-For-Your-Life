@@ -49,7 +49,7 @@ public class LoginActivity extends Activity {
         	// TODO: Add initial users?
         	if (dbHandle.checkUsernamePassword(userName,password)){
                 // Creating user login session with userName = testUser, isNoob=true
-                session.createLoginSession("testUser", "true");
+                session.createLoginSession(userName, "true");
                  
                 // Staring MainActivity
                 Intent i = new Intent(getApplicationContext(), MainMenuActivity.class);
