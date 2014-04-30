@@ -1,6 +1,10 @@
 package run_for_your_life.screens;
 
+import java.util.ArrayList;
+
 import run_for_your_life.sessions.SessionManager;
+import run_for_your_life.database.*;
+import run_for_your_life.user.*;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +15,7 @@ import android.widget.Toast;
 public class LoginActivity extends Activity {
 	private EditText editText_username, editText_password;
 	private SessionManager session;
+	private DatabaseHandler dbHandle;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +24,8 @@ public class LoginActivity extends Activity {
 		getActionBar().hide();
 		
 		// Session Manager
-        session = new SessionManager(getApplicationContext()); 
+        session = new SessionManager(getApplicationContext());
+        dbHandle = new DatabaseHandler(getApplicationContext());
 		
 		editText_username = (EditText) findViewById(R.id.editText_username);
 		editText_password = (EditText) findViewById(R.id.editText_password);
@@ -39,8 +45,8 @@ public class LoginActivity extends Activity {
             // For testing purposes - userName, password is checked with sample data
             // userName = test
             // password = test
-        	// TODO: Check for userName on server, if exists, get password and check against given password
-            if (userName.equals("test") && password.equals("test")){
+        	// TODO: Add initial users?
+        	if (dbHandle.checkUsernamePassword(userName,password)){
                 // Creating user login session with userName = testUser, isNoob=true
                 session.createLoginSession("testUser", "true");
                  
@@ -70,11 +76,22 @@ public class LoginActivity extends Activity {
 		// TODO: Do new user stuff (create username/password, check that username is available, create login session)
 		// SUCCESS: Launch the Tutorial screens
 		// FAILURE: Let them know why and stay put
-		String userName = "newUser";
-		Intent intent = new Intent(this, Tutorial1Activity.class);
-		intent.putExtra("isNoob", true);
-		intent.putExtra("userName", userName);
-		startActivity(intent);
+		String userName = editText_username.getText().toString();
+        String password = editText_password.getText().toString();
+        if (dbHandle.checkUsernameExists(userName)){
+        	//print toast
+        	Toast.makeText(getApplicationContext(), "This username has already been taken",Toast.LENGTH_LONG).show();
+        }
+        else{
+        	// Creating user login session with userName = testUser, isNoob=true
+            session.createLoginSession(userName, "true");
+        	User user = new User(userName,password,100,100,1,new ArrayList<String>());
+        	dbHandle.addUser(user);
+        	Intent intent = new Intent(this, Tutorial1Activity.class);
+			intent.putExtra("isNoob", true);
+			intent.putExtra("userName", userName);
+			startActivity(intent);
+        }
 	}
 	
 	@Override

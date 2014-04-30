@@ -117,6 +117,28 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.insert(TABLE_USERINFO, null, values);
         db.close(); 
     }
+    
+    public boolean checkUsernameExists(String username) {
+    	List<User> userList = getAllUsers();
+    	for (User u : userList){
+    		if (u.getName()==username){
+    			return true;
+    		}
+    	}
+    	return false;        
+    }
+    
+    public boolean checkUsernamePassword(String username,String password) {
+    	List<User> userList = getAllUsers();
+    	for (User u : userList){
+    		if (u.getName()==username && u.getPw()==password){
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+
+    
     public User getUser (String username) {
         SQLiteDatabase db = this.getReadableDatabase();
 
