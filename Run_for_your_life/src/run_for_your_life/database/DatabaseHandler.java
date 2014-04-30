@@ -121,7 +121,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public boolean checkUsernameExists(String username) {
     	List<User> userList = getAllUsers();
     	for (User u : userList){
-    		if (u.getName()==username){
+    		if (u.getName().equals(username)){
     			return true;
     		}
     	}
@@ -131,7 +131,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public boolean checkUsernamePassword(String username,String password) {
     	List<User> userList = getAllUsers();
     	for (User u : userList){
-    		if (u.getName()==username && u.getPw()==password){
+    		if (u.getName().equals(username) && u.getPw().equals(password)){
     			return true;
     		}
     	}

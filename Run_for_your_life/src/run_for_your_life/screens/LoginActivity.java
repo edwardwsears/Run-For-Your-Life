@@ -1,6 +1,7 @@
 package run_for_your_life.screens;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import run_for_your_life.sessions.SessionManager;
 import run_for_your_life.database.*;
