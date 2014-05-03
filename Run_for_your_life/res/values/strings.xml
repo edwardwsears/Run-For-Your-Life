@@ -41,7 +41,7 @@
     <!-- Dojo text -->
     <string name="title_activity_dojo">DojoActivity</string>
     <string name="log_pulse">Log Pulse</string>
-    <string name="pulse_instr">Place finger over camera lens and tap "Log Pulse"</string>
+    <string name="pulse_instr">Sweat your way to victory!</string>
     <string name="pulse_text">Time-BPM\nTime-BPM</string>
     <string name="title_activity_arena">ArenaActivity</string>
     <string name="dummy_button">Dummy Button</string>

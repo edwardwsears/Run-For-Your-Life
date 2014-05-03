@@ -39,7 +39,7 @@ public class MainMenuActivity extends Activity {
 		TextView userNameDisplay = (TextView)findViewById(R.id.display_userName);
 		userNameDisplay.setText(userName);
 
-		if (isNoob.equals("true")) {
+		if (isNoob == null || isNoob.equals("true")) {
 			// TODO: Play through tutorial sequence
 		}
 	}
